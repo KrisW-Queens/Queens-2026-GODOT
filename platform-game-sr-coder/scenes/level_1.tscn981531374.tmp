@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bowahpr4m40vx" path="res://icon.svg" id="1_014kd"]
 [ext_resource type="Script" uid="uid://c1chytbdd1pfa" path="res://scripts/player.gd" id="1_bswci"]
 [ext_resource type="Script" uid="uid://cgi1wslk46joj" path="res://scripts/spike.gd" id="3_rus8k"]
-[ext_resource type="Script" uid="uid://llycsln5t4ue" path="res://scripts/portal.gd" id="4_5xbjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bswci"]
 size = Vector2(64, 64)
@@ -13,9 +12,6 @@ size = Vector2(936, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xbjy"]
 size = Vector2(32, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nkto"]
-size = Vector2(112, 128)
 
 [node name="level1" type="Node2D" unique_id=1739128340]
 
@@ -87,16 +83,4 @@ texture = ExtResource("1_014kd")
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_5xbjy")
 
-[node name="portal" type="Area2D" parent="." unique_id=2146688866]
-position = Vector2(1096, 264)
-script = ExtResource("4_5xbjy")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="portal" unique_id=871192896]
-texture = ExtResource("1_014kd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portal" unique_id=574046510]
-shape = SubResource("RectangleShape2D_4nkto")
-
 [connection signal="body_entered" from="Spike" to="Spike" method="_on_body_entered"]
-[connection signal="body_entered" from="portal" to="portal" method="_on_body_entered"]

@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+var start_position = Vector2(576,320)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,3 +23,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	# handle respawn
+	if position.y > 900:
+		#respawn
+		respawn()
+		
+	
+func respawn():
+	position = start_position
