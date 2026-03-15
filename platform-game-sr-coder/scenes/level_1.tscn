@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cbirpd7huxfaf"]
 
+[ext_resource type="Texture2D" uid="uid://bmj7u38og0143" path="res://sprites/background_color_mushrooms.png" id="1_4nkto"]
 [ext_resource type="PackedScene" uid="uid://ba6dm35xh38km" path="res://prefabs/player.tscn" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://bhwbodliav1rq" path="res://prefabs/spike.tscn" id="2_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://qv8vl3xdqnp7" path="res://prefabs/portal.tscn" id="3_4nkto"]
@@ -361,6 +362,17 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4nkto")
 
 [node name="level1" type="Node2D" unique_id=1739128340]
+
+[node name="Background" type="Parallax2D" parent="." unique_id=1268438258]
+z_index = -1
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1656598013]
+scale = Vector2(2.26, 2.26)
+texture = ExtResource("1_4nkto")
+centered = false
+offset = Vector2(0, -124)
 
 [node name="player" parent="." unique_id=156477634 instance=ExtResource("1_rus8k")]
 position = Vector2(576, 320)
